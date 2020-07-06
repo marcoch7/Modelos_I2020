@@ -31,14 +31,14 @@ Se realiza la modulación por desplazamiento de fase (BPSK), donde un bit 1 repr
 Las images "wave.png" y "Tx.png" corresponden a la curva sinusoidal antes de la modulaci\'on y despu\'es de la modulacion, para los primeros 10 bits.
 ### Problema 2
 
-La potencia promedio se calcula a partir de la ecuacion
-<img src="./images/mediumfreq.png" width="380">
+La potencia promedio se calcula a partir de la ecuacion <br />
+<img src="./images/mediumfreq.png" width="380"> <br />
 Para calcuar la integral de la senal al cuadrado, dividida entre el doble de tiempo se utiliza la funcion integrate.trapz. Como resultado se obtiene una potencia promedio de 0.4900009800019598 W
 
 ### Problema 3
 
-A partir de la siguiente ecuacion, se despeja la potencia del ruido 
-<img src="./images/SNR.png" width="380">
+A partir de la siguiente ecuacion, se despeja la potencia del ruido  <br />
+<img src="./images/SNR.png" width="380"> <br />
 
 Se pide al usuario que ingrese los limites para SNR, a partir de estos se crea la funcion 
 ```c
@@ -50,15 +50,15 @@ La cual, partiendo de la ecuacion anterior, simula el canal ruidoso "iterate + 1
 El usuario puede ingresar valores distintos a -2, 3 sin embargo en esta iteracion se usan estos limites y se obtienen las siguientes figuras: 
 <img src="./images/Rx-2.png" width="380"> <img src="./images/Rx-1.png" width="380">
 <img src="./images/Rx0.png" width="380"> <img src="./images/Rx1.png" width="380">
-<img src="./images/Rx2.png" width="380"> <img src="./images/Rx3.png" width="380">
+<img src="./images/Rx2.png" width="380"> <img src="./images/Rx3.png" width="380"> <br />
 
 ### Problema 4
-Partiendo de la funcion de SciPy welch, se calcula utilizando el metodo de Welch la densidad espectral de potencia la cual corresponde a la siguiente figura:
-<img src="./images/welch_pre_noise.png" width="380"> 
-Luego, se itera para obtener "iterate + 1" graficas con ruido para cada SNR. Estas graficas son las siguientes: 
+Partiendo de la funcion de SciPy welch, se calcula utilizando el metodo de Welch la densidad espectral de potencia la cual corresponde a la siguiente figura:<br />
+<img src="./images/welch_pre_noise.png" width="380"> <br />
+Luego, se itera para obtener "iterate + 1" graficas con ruido para cada SNR. Estas graficas son las siguientes: <br />
 <img src="./images/welch-2.png" width="380"> <img src="./images/welch-1.png" width="380">
 <img src="./images/welch0.png" width="380"> <img src="./images/welch1.png" width="380">
-<img src="./images/welch2.png" width="380"> <img src="./images/welch3.png" width="380">
+<img src="./images/welch2.png" width="380"> <img src="./images/welch3.png" width="380"> <br />
 
 ### Problema 5
 Se realiza demodulación a partir de un análisis energético. 
@@ -71,6 +71,7 @@ Los errores obtenidos se imprimen en la pantalla y, por supuesto, varian para ca
 
 ## Problema 6
 
+<img src="./images/BERvSRN.png" width="380"> <br />
 
 ### Comentarios
 

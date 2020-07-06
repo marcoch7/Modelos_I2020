@@ -33,7 +33,7 @@ Las images "wave.png" y "Tx.png" corresponden a la curva sinusoidal antes de la 
 
 La potencia promedio se calcula a partir de la ecuacion <br />
 <img src="./images/mediumfreq.png" width="380"> <br />
-Para calcuar la integral de la senal al cuadrado, dividida entre el doble de tiempo se utiliza la funcion integrate.trapz. Como resultado se obtiene una potencia promedio de 0.4900009800019598 W
+Para calcuar la integral de la senal al cuadrado, dividida entre el doble de tiempo se utiliza la funcion integrate.trapz. Como resultado se obtiene una potencia promedio de 0.0.4937506171882715 W
 
 ### Problema 3
 
@@ -70,7 +70,7 @@ Se realiza demodulación a partir de un análisis energético.
 Los errores obtenidos se imprimen en la pantalla y, por supuesto, varian para cada iteracion del programa.
 
 ## Problema 6
-
+La siguiente figura relaciona la tasa de error con el valor del SRN. BER representa la cantidad de errores entre la cantidad de bits<br />
 <img src="./images/BERvSRN.png" width="380"> <br />
 
 ### Comentarios

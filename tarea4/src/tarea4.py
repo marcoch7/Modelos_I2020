@@ -15,6 +15,7 @@ bits = [0]*N
 
 # Get bits from csv
 bits = np.genfromtxt('bits10k.csv', delimiter=',')
+bits = bits.astype(int)
 
 # Operational frequency
 f = 5000 
@@ -23,7 +24,7 @@ f = 5000
 T = 1/f 
 
 # Number of samplings
-p = 50
+p = 80
 
 # Points per period
 tp = np.linspace(0, T, p)
@@ -48,9 +49,9 @@ sign = np.zeros(t.shape)
 # BPSK modulated signal
 for k, b in enumerate(bits):
     if b == 1:
-        sign[k*p:(k+1)*p] = b * sin
+        sign[k*p:(k+1)*p] = sin
     else:
-        sign[k*p:(k+1)*p] = -1 * sin    
+        sign[k*p:(k+1)*p] = -sin    
 
 # Visualización de los primeros bits modulados
 pb = 10
@@ -108,8 +109,8 @@ fw, PSD = signal.welch(sign, fs, nperseg=1024)
 plt.figure()
 plt.semilogy(fw, PSD)
 plt.title('Senal modulada sin ruido')
-plt.xlabel('Frecuencia / Hz')
-plt.ylabel('Densidad espectral de potencia / V**2/Hz')
+plt.xlabel('Frecuencia / kHz')
+plt.ylabel('Densidad espectral de potencia / V**2/kHz')
 plt.savefig("images/welch_pre_noise.png")
 
 
@@ -120,8 +121,8 @@ for i in range(iterate + 1):
     plt.figure()
     plt.semilogy(fw, PSD)
     plt.title('Senal despues del canal ruidoso, con SNR: '+ str(SNR_W))
-    plt.xlabel('Frecuencia / Hz')
-    plt.ylabel('Densidad espectral de potencia / V**2/Hz')
+    plt.xlabel('Frecuencia / kHz')
+    plt.ylabel('Densidad espectral de potencia / V**2/kHz')
     plt.savefig("images/welch" + str(SNR_W) + '.png')
     SNR_W += 1
 
@@ -159,8 +160,9 @@ for i in range(iterate + 1):
 # SNR_V list contains SNR values
 SNR_V = [*range(int(SNR_L), int(SNR_U) + 1, 1)]
 plt.figure()
-plt.bar(SNR_V, BER_V)
+plt.scatter(SNR_V, BER_V)
 plt.xlabel('SRN(dB)')
-plt.ylabel('Ber')    
-plt.title('BER vs SRN')
+plt.ylabel('Ber') 
+plt.grid(axis='y', alpha=0.75)  
+plt.title('Error rate')
 plt.savefig("images/BERvSRN.png")

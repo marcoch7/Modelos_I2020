@@ -34,7 +34,7 @@ sin = np.sin(2*np.pi * f * tp)
 # sin waveform
 plt.plot(tp, sin)
 plt.xlabel('Tiempo / s')
-plt.savefig("/home/marco/Modelos/Modelos_I2020/tarea4/images/wave.png")
+plt.savefig("images/wave.png")
 
 # Sampling frequency
 fs = p/T 
@@ -56,7 +56,7 @@ for k, b in enumerate(bits):
 pb = 10
 plt.figure()
 plt.plot(sign[0:pb*p]) 
-plt.savefig("/home/marco/Modelos/Modelos_I2020/tarea4/images/Tx.png")
+plt.savefig("images/Tx.png")
 
 
 
@@ -95,7 +95,7 @@ def get_noise(iterate, SNR_L, Rx_list):
         plt.xlabel('Tiempo (s)')
         plt.ylabel('Amplitud')
         plt.plot(Rx_list[SNR][0:pb*p])
-        plt.savefig("/home/marco/Modelos/Modelos_I2020/tarea4/images/Rx" + str(SNR) + '.png')              # plots first 10 bits of signal + noise
+        plt.savefig("images/Rx" + str(SNR) + '.png')              # plots first 10 bits of signal + noise
         SNR += 1
 
 get_noise(iterate, SNR_L, Rx_list)
@@ -110,7 +110,7 @@ plt.semilogy(fw, PSD)
 plt.title('Senal modulada sin ruido')
 plt.xlabel('Frecuencia / Hz')
 plt.ylabel('Densidad espectral de potencia / V**2/Hz')
-plt.savefig("/home/marco/Modelos/Modelos_I2020/tarea4/images/welch_pre_noise.png")
+plt.savefig("images/welch_pre_noise.png")
 
 
 # Post noise
@@ -122,7 +122,7 @@ for i in range(iterate + 1):
     plt.title('Senal despues del canal ruidoso, con SNR: '+ str(SNR_W))
     plt.xlabel('Frecuencia / Hz')
     plt.ylabel('Densidad espectral de potencia / V**2/Hz')
-    plt.savefig("/home/marco/Modelos/Modelos_I2020/tarea4/images/welch" + str(SNR_W) + '.png')
+    plt.savefig("images/welch" + str(SNR_W) + '.png')
     SNR_W += 1
 
 
@@ -163,4 +163,4 @@ plt.bar(SNR_V, BER_V)
 plt.xlabel('SRN(dB)')
 plt.ylabel('Ber')    
 plt.title('BER vs SRN')
-plt.savefig("/home/marco/Modelos/Modelos_I2020/tarea4/images/BERvSRN.png")
+plt.savefig("images/BERvSRN.png")

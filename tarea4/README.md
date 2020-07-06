@@ -76,9 +76,10 @@ Los errores obtenidos se imprimen en la pantalla y, por supuesto, varian para ca
 ### Comentarios
 
 -El codigo se encuentra dentro de la carpeta src.<br />
--El codigo es totalmente parametrizable, es decir, al es posible asignarle cualquier cantidad de bits y decibeles para SNR, siempre y cuando en el archivo bits10k.csv se encuentren suficientes bits.
+-El codigo es totalmente parametrizable, es decir, al es posible asignarle cualquier cantidad de bits y decibeles para SNR, siempre y cuando en el archivo bits10k.csv se encuentren suficientes bits.<br />
 -Los resultados de los problemas 2 y 4 se imprimen en la pantalla al correr el codigo e ingresar los parametros.<br />
--Las graficas se encuentran en la carpeta images.<br />
+-Las graficas utilizadas en este readme se encuentran en la carpeta images.<br />
+-Las graficas generadas por el programa se encuentran en la carpeta src/images.<br />
 -Las graficas del problema 3 se llaman "Rx#.png", donde # toma los parametros ingresados en la terminal.<br />
 -Las graficas del problema 4 se llaman "welch#.png", donde # toma los parametros ingresados en la terminal.<br />
 -El numero en cada grafica corresponde al SNR utilizado para la misma.<br />
